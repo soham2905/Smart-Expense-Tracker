@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- Reusable navbar, pulled into every page with th:replace="~{fragments :: navbar}" -->
+<!--
+  NOTE: This navbar deliberately avoids Bootstrap's JS-powered collapse
+  toggler (no data-bs-toggle button, no bootstrap.bundle.min.js). The
+  project spec requires zero JavaScript, so the nav links are always
+  visible and simply wrap onto a new line on small screens via flex-wrap.
+-->
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary mb-4 shadow-sm">
+    <div class="container flex-wrap">
+        <a class="navbar-brand" href="/">💰 Smart Expense Tracker</a>
+        <ul class="navbar-nav flex-row flex-wrap gap-2 gap-lg-0 ms-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/expenses/add">Add Expense</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/expenses">All Expenses</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+</body>
+</html>
