@@ -1,10 +1,10 @@
-# ---- Stage 1: Build the app with Maven ----
-FROM eclipse-temurin:17-jdk-jammy AS build
+# ---- Stage 1: Build the app with Maven (image already includes Maven itself) ----
+FROM maven:3.9.9-eclipse-temurin-17 AS build
 WORKDIR /app
 
-# Copy everything (pom.xml, mvnw, src/) and build the jar
+# Copy everything (pom.xml, src/) and build the jar
 COPY . .
-RUN chmod +x mvnw && ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # ---- Stage 2: Run the app with just a JRE (smaller, faster image) ----
 FROM eclipse-temurin:17-jre-jammy
