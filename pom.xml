@@ -65,10 +65,7 @@
     <build>
         <finalName>expense-tracker</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
+           <plugin> <groupId>org.springframework.boot</groupId><artifactId>spring-boot-maven-plugin</artifactId> <configuration> <mainClass>com.hackathon.expensetracker.ExpenseTrackerApplication</mainClass> </configuration> </plugin>
         </plugins>
     </build>
 </project>
